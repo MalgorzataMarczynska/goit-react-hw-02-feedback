@@ -36,18 +36,13 @@ export class App extends React.Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            options="good"
-            onLeaveFeedback={this.updateStats}
-          ></FeedbackOptions>
-          <FeedbackOptions
-            options="neutral"
-            onLeaveFeedback={this.updateStats}
-          ></FeedbackOptions>
-          <FeedbackOptions
-            options="bad"
-            onLeaveFeedback={this.updateStats}
-          ></FeedbackOptions>
+          {Object.keys(this.state).map(key => (
+            <FeedbackOptions
+              key={key}
+              options={key}
+              onLeaveFeedback={this.updateStats}
+            />
+          ))}
         </Section>
         <Section title="Statistics">
           <Statistics
