@@ -2,7 +2,12 @@ import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <button className={css.button} type="button" onClick={onLeaveFeedback}>
+  <button
+    id={options}
+    className={css.button}
+    type="button"
+    onClick={onLeaveFeedback}
+  >
     {options}
   </button>
 );
