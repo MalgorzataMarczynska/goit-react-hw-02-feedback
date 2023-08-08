@@ -7,15 +7,6 @@ export class App extends React.Component {
   state = { good: 0, neutral: 0, bad: 0 };
 
   updateStats = evt => {
-    // const rating = evt.target.innerHTML;
-    // const stats = this.state;
-    // for (const key in stats) {
-    //   if (key === rating) {
-    //     this.setState(prevState => {
-    //       return { [key]: Number(prevState[key] + 1) };
-    //     });
-    //   }
-    // }
     const key = evt.target.id;
     this.setState(prevState => ({ [key]: Number(prevState[key] + 1) }));
   };
